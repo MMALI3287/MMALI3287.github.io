@@ -80,6 +80,11 @@ nav ul li a:hover::after {
   margin-bottom: 30px;
 }
 
+h2 {
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
 .header-text span {
   color: #ff004f;
 }
@@ -419,6 +424,11 @@ nav .fas {
   .header-text h1 {
     font-size: 30px;
   }
+
+  h2 {
+    font-size: 25px;
+  }
+
   nav .fas {
     display: block;
     font-size: 25px;
