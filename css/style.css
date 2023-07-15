@@ -1,8 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Vollkorn:ital,wght@1,500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background-color: #00000082;
 }
 
 html {
@@ -10,31 +16,78 @@ html {
 }
 
 body {
-  background: #080808;
   color: #fff;
-}
-
-#header {
-  width: 100%;
-  height: 100vh;
-  background: url(../images/homebg.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.container {
-  padding: 10px 10%;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  font-family: "Comfortaa", cursive;
 }
 
 .logo {
-  width: 150px;
+  font-size: 2rem;
+  margin: 0 5rem 0 4rem;
+}
+.git {
+  font-size: 1.5rem;
+  margin: 0.5rem 3rem;
+  width: 15rem;
+  height: 4rem;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.git:hover {
+  background: white;
+}
+
+.cont:hover {
+  color: black;
+}
+
+.cont {
+  text-decoration: none;
+  color: white;
+}
+
+#header {
+  font-size: 1.5rem;
+  width: 100%;
+  height: 100vh;
+  background: url(../assets/images/langing.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+}
+
+.abt {
+  margin-top: 100vh;
+}
+
+.header-text {
+  font-family: "Vollkorn", serif;
+  line-height: 7rem;
+  margin-top: 25%;
+  font-size: 8rem;
+  font-weight: 700;
+}
+.subheader {
+  font-family: "Vollkorn", serif;
+  font-size: 5rem;
+}
+.sub {
+  font-size: 1.5rem;
+  color: rgb(113, 113, 113);
+  font-weight: 400;
+}
+.land {
+  padding: 0 4rem;
+}
+
+.container {
+  color: black;
+  padding-top: 3rem;
 }
 
 nav ul li {
@@ -69,24 +122,55 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
-.header-text {
-  margin-top: 15%;
-  font-size: 30px;
+#capsule {
+  width: 100%;
+  height: 100%;
+  background: url(../assets/images/capsule.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 250px 200px;
+  padding: 2rem;
 }
 
-.header-text h1 {
-  font-size: 55px;
-  font-weight: 600;
-  margin-bottom: 30px;
+.biog {
+  margin-top: 6rem;
 }
 
-h2 {
-  font-size: 25px;
-  margin-bottom: 30px;
+.subtext {
+  margin: 2rem 0;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
-.header-text span {
-  color: #ff004f;
+.bot {
+  margin-bottom: 6.2rem;
+}
+
+.subtext2 {
+  margin: 2.2rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.capbord {
+  border: 2px solid rgb(215, 215, 215);
+  border-radius: 200px 400px;
+  padding: 2rem;
+}
+
+.advantage {
+  padding: 6rem;
+  padding-top: 10rem;
+  color: azure;
+}
+
+.mexp {
+  color: azure;
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin-bottom: 10rem;
+  justify-content: center;
+  display: flex;
 }
 
 /* * about */
@@ -95,7 +179,8 @@ h2 {
   color: #ababab;
 }
 
-.row {
+.rowc {
+  margin-top: 8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -133,7 +218,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  font-size: 18px;
+  font-size: 1.3rem;
   font-weight: 500;
   cursor: pointer;
   position: relative;
@@ -160,11 +245,12 @@ h2 {
   margin: 10px 0;
   flex-wrap: wrap;
   justify-content: center;
+  font-size: 1.1rem;
 }
 
 .tab-contents ul li span {
   color: #b83d64;
-  font-size: 16px;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
@@ -179,6 +265,7 @@ h2 {
 /* * services */
 #services {
   padding: 30px 0;
+  background-color: #202429;
 }
 
 .services-list {
@@ -189,7 +276,8 @@ h2 {
 }
 
 .services-list div {
-  background: #262626;
+  background: #060606;
+  color: #fff;
   padding: 40px;
   font-size: 13px;
   font-weight: 300;
@@ -198,11 +286,13 @@ h2 {
 }
 
 .services-list div i {
+  color: #fff;
   font-size: 50px;
   margin-bottom: 30px;
 }
 
 .services-list div h2 {
+  color: #fff;
   font-size: 30px;
   font-weight: 500;
   margin-bottom: 15px;
@@ -223,7 +313,8 @@ h2 {
 
 /* * portfolio */
 #portfolio {
-  padding: 50px 0;
+  justify-content: center;
+  margin-top: 3rem;
 }
 
 .work-list {
@@ -291,7 +382,7 @@ h2 {
   height: 100%;
 }
 
-.btn {
+.btnc {
   display: block;
   margin: 50px auto;
   width: fit-content;
@@ -301,13 +392,20 @@ h2 {
   text-decoration: none;
   color: #fff;
   transition: background 0.5s;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
-.btn:hover {
+.btnc:hover {
   background: #ff004f;
 }
 
 /* * contact */
+
+#contact {
+  background-color: #202429;
+}
+
 .contact-left {
   flex-basis: 35%;
 }
@@ -348,7 +446,7 @@ h2 {
   font-size: 35px;
   transform: translateY(-5px);
 }
-.btn.btn2 {
+.btnc.btn2 {
   display: inline-block;
   background: #ff004f;
   color: #fff;
@@ -374,7 +472,7 @@ form textarea {
   border-radius: 10px;
   font-size: 18px;
   color: #fff;
-  background: #262626;
+  background: #060606;
 }
 
 form .btn2 {
@@ -388,7 +486,7 @@ form .btn2 {
   width: 100%;
   text-align: center;
   padding: 25px 0;
-  background: #262626;
+  background: #060606;
   font-weight: 300;
   margin-top: 20px;
 }
@@ -415,8 +513,38 @@ nav .fas {
 
 @media only screen and (max-width: 600px) {
   #header {
-    background-image: url(../images/bg-mobile.jpg);
+    background-image: url(../assets/images/bg-mobile.jpg);
   }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .subheader {
+    font-size: 1.5rem;
+  }
+
+  .sub {
+    font-size: 1rem;
+    color: white;
+  }
+
+  #portfolio {
+    padding: 0 3rem;
+  }
+
+  .capbord {
+    height: 600px;
+  }
+
+  .logo {
+    margin-left: 1rem;
+  }
+
+  .git {
+    visibility: hidden;
+  }
+
   .header-text {
     margin-top: 100%;
     font-size: 16px;
@@ -432,17 +560,6 @@ nav .fas {
   nav .fas {
     display: block;
     font-size: 25px;
-  }
-  nav ul {
-    background: #ff004f;
-    position: fixed;
-    top: 0;
-    right: -200px;
-    width: 200px;
-    height: 100vh;
-    padding-top: 50px;
-    z-index: 2;
-    transition: right 0.5s;
   }
   nav ul li {
     display: block;
