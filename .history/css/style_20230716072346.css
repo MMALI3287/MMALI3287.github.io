@@ -8,13 +8,12 @@
 }
 
 .navbar {
-  background-color: #000000;
+  background-color: #00000082;
   height: 7rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
 }
 
 html {
@@ -561,10 +560,6 @@ nav .fas {
   }
   .header-text h1 {
     font-size: 30px;
-  }
-
-  .navbar-collapse {
-    background-color: #202429;
   }
 
   h2 {

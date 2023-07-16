@@ -8,13 +8,8 @@
 }
 
 .navbar {
-  background-color: #000000;
-  height: 7rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
+  background-color: #00000082;
+  height: 2rem;
 }
 
 html {
@@ -158,10 +153,6 @@ nav ul li a:hover::after {
   border: 2px solid rgb(215, 215, 215);
   border-radius: 200px 400px;
   padding: 2rem;
-}
-
-.capsule {
-  z-index: -1;
 }
 
 .advantage {
@@ -522,14 +513,6 @@ nav .fas {
     background-image: url(../assets/images/bg-mobile.jpg);
   }
 
-  .navbar {
-    height: 8rem;
-  }
-
-  .git {
-    display: none;
-  }
-
   .name {
     font-size: 2rem;
   }
@@ -555,16 +538,16 @@ nav .fas {
     margin-left: 1rem;
   }
 
+  .git {
+    display: none;
+  }
+
   .header-text {
     margin-top: 100%;
     font-size: 16px;
   }
   .header-text h1 {
     font-size: 30px;
-  }
-
-  .navbar-collapse {
-    background-color: #202429;
   }
 
   h2 {
