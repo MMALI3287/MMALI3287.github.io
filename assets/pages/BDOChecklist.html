@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>BDO Adventure Tracker</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
+      integrity="sha512-...sha-hash..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css"
+      integrity="sha512-...magic-hash..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      @font-face {
+        font-family: "Absans";
+        src: url("../fonts/Absans-Regular.otf") format("opentype");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Durer";
+        src: url("../fonts/Durer.otf") format("opentype"),
+          url("../fonts/Durer.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Manuscribe";
+        src: url("../fonts/ManuscribeFree-Regular.otf") format("opentype");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Neue Metana";
+        src: url("../fonts/NeueMetana-Regular.otf") format("opentype");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Vegawanty";
+        src: url("../fonts/VegawantyRegular-owEPx.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+      :root {
+        --primary: #4a3a7b;
+        --secondary: #e6b34b;
+        --accent: #ff5e30;
+        --success: #d4a97c;
+        --warning: #066b7a;
+        --danger: #c71621;
+        --neutral-light: #e5e0d1;
+        --additional: #1d7477;
+        --alert: #92c5b6;
+        --alt2: #1d2d49;
+        --alt3: #000000;
+        --glow: 0 0 4px var(--accent), 0 0 8px var(--accent); /* Reduced glow */
+        --scale: 1;
+        --design-width: 1920;
+        --design-height: 1080;
+      }
+
+      body {
+        font-family: "Durer", "Absans", "Vegawanty", "Neue Metana", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: var(--primary);
+        color: var(--neutral-light);
+        min-height: -webkit-fill-available;
+        min-height: 100vh;
+        overflow-x: hidden;
+        zoom: 1;
+        overflow: hidden;
+        width: 100vw;
+        height: 100dvh; /* Use dynamic viewport height */
+        margin: 0;
+        padding: env(safe-area-inset-top) env(safe-area-inset-right)
+          env(safe-area-inset-bottom) env(safe-area-inset-left);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        will-change: transform; /* Hardware acceleration */
+      }
+
+      @media screen and (min-width: 1024px) {
+        body {
+          transform: scale(calc(100vw / 1920)); /* Base scale on 1920px width */
+          transform-origin: top left;
+        }
+      }
+
+      #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      .container {
+        position: relative;
+        max-width: 1200px;
+        margin: 10px auto;
+        padding: 1rem;
+        z-index: 1;
+        height: calc(100dvh - 20px); /* Account for browser UI */
+        display: flex;
+        flex-direction: column;
+        width: calc(var(--design-width) * 1px);
+        height: calc(var(--design-height) * 1px);
+        transform: scale(var(--scale));
+        transform-origin: center center;
+        margin: 0 auto;
+        padding: 2rem;
+        box-sizing: border-box;
+        overflow: hidden;
+        will-change: transform; /* Hardware acceleration */
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 3rem;
+        animation: floatY 3s ease-in-out infinite;
+      }
+
+      .header h1 {
+        font-family: "Neue Metana", sans-serif;
+        font-size: 4rem; /* Increased from 2.5rem */
+        margin: 0;
+        background: linear-gradient(45deg, var(--accent), var(--success));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 3px var(--accent);
+        letter-spacing: 2px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .checklist-container {
+          grid-template-columns: 1fr !important;
+        }
+
+        .button-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .reset-button {
+          width: 100%;
+          max-width: 300px;
+        }
+
+        .header h1 {
+          font-size: 2.5rem;
+        }
+
+        .timer-label {
+          font-size: 1.5rem;
+        }
+
+        .timer-value {
+          font-size: 1.5rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+        .container {
+          transform: none;
+          width: 100%;
+          height: auto;
+          overflow-y: auto;
+        }
+      }
+
+      .checklist-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        perspective: 1000px;
+      }
+
+      .section {
+        background: var(--secondary);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(100, 255, 218, 0.1);
+        transform-style: preserve-3d;
+        animation: swirlIn 1.2s ease-in-out forwards,
+          shadowPulse 2s infinite alternate;
+        will-change: transform, box-shadow; /* Hardware acceleration */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+      }
+
+      .section:hover {
+        border-color: var(--accent);
+        box-shadow: 0 0 15px rgba(100, 255, 218, 0.2); /* Reduced hover glow */
+        transform: translateY(-10px) rotateX(5deg); /* Add hover effect */
+      }
+
+      .section-title {
+        font-family: "Durer", sans-serif;
+        font-size: 2.5rem; /* Increased from 1.3rem */
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--accent);
+        color: var(--accent);
+        text-shadow: 0 0 5px var(--accent);
+        display: flex;
+        justify-content: center;
+      }
+
+      .checkbox-wrapper {
+        position: relative;
+        margin: 1rem 0;
+        padding: 0.75rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .checkbox-wrapper:hover {
+        background: rgba(100, 255, 218, 0.1);
+        transform: translateX(10px);
+      }
+
+      .checkbox-wrapper input[type="checkbox"] {
+        display: none;
+      }
+
+      .checkbox-wrapper label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-family: "Absans", sans-serif;
+        font-size: 1.2rem; /* Increased from 1rem */
+        color: #fff;
+        transition: all 0.3s ease;
+      }
+
+      .checkbox-wrapper label::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        margin-right: 15px;
+        border: 2px solid var(--accent);
+        border-radius: 6px;
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        will-change: transform, box-shadow; /* Hardware acceleration */
+      }
+
+      .checkbox-wrapper input[type="checkbox"]:checked + label::before {
+        background-color: var(--accent);
+        transform: rotate(45deg) scale(1.2); /* Add scale effect */
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--accent); /* Reduced glow */
+      }
+
+      .checkbox-wrapper input[type="checkbox"]:checked + label {
+        text-decoration: line-through;
+        opacity: 0.7;
+      }
+
+      .timer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+
+      .timer {
+        background: rgba(23, 42, 69, 0.6);
+        padding: 1rem;
+        border-radius: 15px;
+        text-align: center;
+        border: 1px solid rgba(100, 255, 218, 0.2);
+        animation: fadeInScale 1s ease forwards,
+          timerGlow 2.5s infinite alternate;
+        will-change: transform, box-shadow; /* Hardware acceleration */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+      }
+
+      .timer:hover {
+        transform: scale(1.05); /* Add hover effect */
+        box-shadow: 0 0 10px var(--warning); /* Add hover glow */
+      }
+
+      .timer-label {
+        font-family: "Absans", "Neue Metana", sans-serif;
+        color: var(--accent);
+        font-size: 1.9rem; /* Increased from 0.8rem */
+        margin-bottom: 0.5rem;
+      }
+
+      .timer-value {
+        font-family: "Vegawanty", sans-serif;
+        font-size: 2rem; /* Increased from 1.1rem */
+        color: var(--warning);
+        text-shadow: 0 0 5px var(--warning);
+      }
+
+      .button-container {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        justify-content: center;
+      }
+
+      .reset-button {
+        background: linear-gradient(45deg, var(--accent), var(--success));
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        color: var(--primary);
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: "Durer", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        overflow: hidden;
+        font-size: 1.3rem;
+        will-change: transform, box-shadow; /* Hardware acceleration */
+      }
+
+      .reset-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      .reset-button:hover::before {
+        left: 100%;
+      }
+
+      .reset-button:hover {
+        transform: translateY(-5px) scale(1.05); /* Add scale effect */
+        box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+      }
+
+      @keyframes floatY {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes sectionEntry {
+        from {
+          opacity: 0;
+          transform: translateY(30px) rotateX(-10deg);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) rotateX(0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(100, 255, 218, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
+        }
+      }
+
+      @keyframes swirlIn {
+        0% {
+          opacity: 0;
+          transform: rotate(-10deg) scale(0.9);
+        }
+        50% {
+          opacity: 0.5;
+          transform: rotate(2deg) scale(1.05);
+        }
+        100% {
+          opacity: 1;
+          transform: rotate(0) scale(1);
+        }
+      }
+      @keyframes shadowPulse {
+        0% {
+          box-shadow: 0 0 2px var(--accent); /* Reduced glow */
+        }
+        100% {
+          box-shadow: 0 0 8px var(--accent); /* Reduced glow */
+        }
+      }
+      @keyframes fadeInScale {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes timerGlow {
+        0% {
+          text-shadow: 0 0 2px var(--accent); /* Reduced glow */
+          transform: translateY(0);
+        }
+        100% {
+          text-shadow: 0 0 8px var(--accent); /* Reduced glow */
+          transform: translateY(-2px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <div class="container">
+      <div class="header">
+        <h1>BDO Adventure Tracker</h1>
+        <div class="timer-container">
+          <div class="timer" id="daily-timer"></div>
+          <div class="timer" id="barter-timer"></div>
+          <div class="timer" id="weekly-timer"></div>
+        </div>
+      </div>
+
+      <div class="checklist-container">
+        <div class="section">
+          <div class="section-title">Daily Must-Do</div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="imperial" />
+            <label for="imperial">Imperial Cooking</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="spirit" />
+            <label for="spirit">Black Spirit Adventure</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="guild" />
+            <label for="guild">Guild Fund</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="challenge" />
+            <label for="challenge">Challenge (Y)</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="rift" />
+            <label for="rift">Dark Rift</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="agris" />
+            <label for="agris">Agris Grind</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="pit" />
+            <label for="pit">Pit of Undying</label>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Optional Daily</div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="gathering" />
+            <label for="gathering">Gathering</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="farming" />
+            <label for="farming">Farming</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="sailing" />
+            <label for="sailing">Sailing Dailies</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="bartering" />
+            <label for="bartering">Bartering</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="solare" />
+            <label for="solare">Arena of Solare</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="guildmissions" />
+            <label for="guildmissions">Guild Missions</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="adventure" />
+            <label for="adventure">Adventure Log</label>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Weekly Tasks</div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="liana" />
+            <label for="liana">Weekly Quest from Liana</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="bossblitz" />
+            <label for="bossblitz">Boss Blitz</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="worldboss" />
+            <label for="worldboss">World Bosses</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="guildboss" />
+            <label for="guildboss">Guild Boss Raid</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="season" />
+            <label for="season">Season Server Quests</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="horserace" />
+            <label for="horserace">Horse Race</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="atoraxxion" />
+            <label for="atoraxxion">Atoraxxion Dungeons</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="reset-button" onclick="resetDaily()">
+          Reset Daily Tasks
+        </button>
+        <button class="reset-button" onclick="resetWeekly()">
+          Reset Weekly Tasks
+        </button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      function updateScale() {
+        const container = document.querySelector(".container");
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const designWidth = 1920;
+        const designHeight = 1080;
+
+        const scaleX = windowWidth / designWidth;
+        const scaleY = windowHeight / designHeight;
+        const scale = Math.min(scaleX, scaleY);
+
+        document.documentElement.style.setProperty("--scale", scale);
+      }
+
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 100, density: { enable: true, value_area: 800 } },
+          color: { value: "#64ffda" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#64ffda",
+            opacity: 0.2,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: "none",
+            random: true,
+            out_mode: "out",
+          },
+        },
+      });
+
+      function loadSavedState() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((checkbox) => {
+          const savedState = localStorage.getItem(checkbox.id);
+          if (savedState === "true") {
+            checkbox.checked = true;
+          }
+        });
+      }
+
+      function saveState(checkbox) {
+        localStorage.setItem(checkbox.id, checkbox.checked);
+      }
+
+      function resetDaily() {
+        const dailyCheckboxes = document.querySelectorAll(
+          '.section:not(:last-child) input[type="checkbox"]'
+        );
+        dailyCheckboxes.forEach((checkbox) => {
+          checkbox.checked = false;
+          localStorage.setItem(checkbox.id, false);
+        });
+      }
+
+      function resetWeekly() {
+        const weeklyCheckboxes = document.querySelectorAll(
+          '.section:last-child input[type="checkbox"]'
+        );
+        weeklyCheckboxes.forEach((checkbox) => {
+          checkbox.checked = false;
+          localStorage.setItem(checkbox.id, false);
+        });
+      }
+
+      function updateAllTimers() {
+        const now = new Date();
+
+        // Convert GMT+6 times to GMT times
+        const dailyResetGMT = 0; // 6 AM GMT+6 = 0:00 GMT
+        const barterResetGMT = 6; // 12 PM GMT+6 = 6:00 GMT
+        const weeklyResetGMT = 9; // 3 PM GMT+6 = 9:00 GMT
+
+        // Daily Reset
+        const nextDaily = new Date();
+        nextDaily.setUTCHours(dailyResetGMT, 0, 0, 0);
+        if (now > nextDaily) nextDaily.setUTCDate(nextDaily.getUTCDate() + 1);
+
+        // Bartering/Agris Reset
+        const nextBarter = new Date();
+        nextBarter.setUTCHours(barterResetGMT, 0, 0, 0);
+        if (now > nextBarter)
+          nextBarter.setUTCDate(nextBarter.getUTCDate() + 1);
+
+        // Weekly Reset (Thursday)
+        const nextWeekly = new Date();
+        nextWeekly.setUTCHours(weeklyResetGMT, 0, 0, 0);
+        const daysUntilThursday = (4 + 7 - nextWeekly.getUTCDay()) % 7;
+        nextWeekly.setUTCDate(nextWeekly.getUTCDate() + daysUntilThursday);
+        if (now > nextWeekly) {
+          nextWeekly.setUTCDate(nextWeekly.getUTCDate() + 7);
+        }
+
+        function formatTimeLeft(target) {
+          const diff = target - now;
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+          return days > 0
+            ? `${days}d ${hours}h ${minutes}m ${seconds}s`
+            : `${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        document.getElementById("daily-timer").innerHTML = `
+          <div class="timer-label">Daily Reset</div>
+          <div class="timer-value">${formatTimeLeft(nextDaily)}</div>
+        `;
+        document.getElementById("barter-timer").innerHTML = `
+          <div class="timer-label">Bartering/Agris Reset</div>
+          <div class="timer-value">${formatTimeLeft(nextBarter)}</div>
+        `;
+        document.getElementById("weekly-timer").innerHTML = `
+          <div class="timer-label">Weekly Reset</div>
+          <div class="timer-value">${formatTimeLeft(nextWeekly)}</div>
+        `;
+      }
+
+      // Initialize
+      window.onload = function () {
+        updateScale();
+        loadSavedState();
+        updateAllTimers();
+        setInterval(updateAllTimers, 1000);
+
+        // Add resize listener
+        window.addEventListener("resize", updateScale);
+
+        // Auto-reset checks
+        setInterval(() => {
+          const now = new Date();
+          if (now.getHours() === 6 && now.getMinutes() === 0) {
+            resetDaily();
+          }
+          if (now.getHours() === 12 && now.getMinutes() === 0) {
+            // Reset only bartering and agris checkboxes
+            ["bartering", "agris"].forEach((id) => {
+              const checkbox = document.getElementById(id);
+              if (checkbox) {
+                checkbox.checked = false;
+                localStorage.setItem(id, false);
+              }
+            });
+          }
+          if (
+            now.getDay() === 4 &&
+            now.getHours() === 15 &&
+            now.getMinutes() === 0
+          ) {
+            resetWeekly();
+          }
+        }, 60000);
+      };
+
+      // Save state when checkbox changes
+      document
+        .querySelectorAll('input[type="checkbox"]')
+        .forEach((checkbox) => {
+          checkbox.addEventListener("change", function () {
+            saveState(this);
+          });
+        });
+    </script>
+  </body>
+</html>
