@@ -1,51 +1,129 @@
+@keyframes rainbow-bg {
+  0% {
+    background-color: #ff007f;
+  }
+  14% {
+    background-color: #ff7f00;
+  }
+  28% {
+    background-color: #ffff00;
+  }
+  42% {
+    background-color: #00ff7f;
+  }
+  57% {
+    background-color: #007fff;
+  }
+  71% {
+    background-color: #8b00ff;
+  }
+  100% {
+    background-color: #ff007f;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-10px, 10px);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  75% {
+    transform: translate(-10px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes button-grow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #f9e3e3;
-  font-family: "Arial", sans-serif;
-  flex-direction: column;
-}
-
-.container {
+  font-family: "Poppins", sans-serif;
   text-align: center;
+  background-color: #ff007f;
+  animation: rainbow-bg 10s infinite linear;
+  overflow: hidden;
 }
 
 h1 {
-  font-size: 2.5em;
-  color: #d32f2f;
+  font-size: 3em;
+  color: white;
+  text-shadow: 4px 4px 6px black;
+  animation: fadeIn 2s ease-in-out;
 }
 
-.buttons {
-  margin-top: 20px;
+.yes-button,
+.no-button {
+  font-size: 1.5em;
+  padding: 20px 40px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .yes-button {
-  font-size: 1.5em;
-  padding: 10px 20px;
-  margin-right: 10px;
-  background-color: #4caf50;
+  background: linear-gradient(
+    45deg,
+    #ff007f,
+    #ff7f00,
+    #ffff00,
+    #00ff7f,
+    #007fff,
+    #8b00ff
+  );
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  animation: shake 1s infinite, button-grow 2s infinite ease-in-out;
 }
 
 .no-button {
-  font-size: 1.5em;
-  padding: 10px 20px;
-  background-color: #f44336;
+  background: linear-gradient(45deg, #000000, #ff007f);
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  position: absolute;
+  border-radius: 10px;
+  animation: shake 0.5s infinite;
 }
 
-.gif_container img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 20px;
+.yes-button:hover,
+.no-button:hover {
+  transform: scale(1.3) rotate(10deg);
+  animation: button-grow 1.5s forwards;
+}
+
+@media (max-width: 600px) {
+  .yes-button,
+  .no-button {
+    font-size: 1.2em;
+    padding: 12px 25px;
+  }
 }

@@ -4,22 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Will You Be My Valentine?</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Spectral+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Animate.css (CSS Animations) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Hover.css (Hover Animations) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
+    />
+
+    <!-- Lottie Web (For animated SVGs) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.10/bodymovin.min.js"></script>
+
+    <!-- Particles.js (Particle Animation for background effects) -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+    <!-- Font Awesome (For icons and other effects) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- TinyColor2 (For more advanced color manipulations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor2/1.4.2/tinycolor-min.js"></script>
+
+    <!-- Magic Animations (A collection of magic animations) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.0.0/magic.min.css"
+    />
+
+    <!-- Swiper.js (For smooth sliding transitions) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- AOS (Animate on Scroll) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Chroma.js (For advanced color scales) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Will you be my Valentine?</h1>
+      <h1 class="title animate__animated animate__fadeIn animate__delay-1s">
+        Will you be my Valentine?
+      </h1>
       <div class="buttons">
-        <button class="yes-button" onclick="handleYesClick()">Yes</button>
-        <button class="no-button" onclick="handleNoClick()">No</button>
+        <button class="yes-button hvr-pulse-grow" onclick="handleYesClick()">
+          Yes
+        </button>
+        <button class="no-button hvr-shrink" onclick="handleNoClick()">
+          No
+        </button>
       </div>
       <div class="gif_container">
         <img
           src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif"
           alt="Cute GIF"
+          class="animate__animated animate__fadeIn animate__delay-2s"
         />
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
