@@ -112,6 +112,7 @@ h1 {
   position: absolute;
   border-radius: 10px;
   animation: shake 0.5s infinite;
+  margin-left: 50px;
 }
 
 .yes-button:hover,

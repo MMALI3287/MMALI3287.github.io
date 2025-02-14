@@ -1,14 +1,14 @@
 const messages = [
-  "Are you sure?",
-  "Really sure??",
-  "Are you positive?",
-  "Pookie please...",
-  "Just think about it!",
-  "If you say no, I will be really sad...",
-  "I will be very sad...",
-  "I will be very very very sad...",
-  "Ok fine, I will stop asking...",
-  "Just kidding, say yes please! ❤️",
+  "Come on, you know you want to!",
+  "Don't be shy, just say yes!",
+  "You know it's the right choice 😉",
+  "Is this your way of playing hard to get?",
+  "What’s the harm in saying yes? ❤️",
+  "Oh, you’re gonna make me beg, huh?",
+  "You’ll regret saying no 😏",
+  "Just say yes, and I’ll be your Valentine forever 😘",
+  "Are you saying no, or just teasing me? 😜",
+  "I know you like me, so just say yes already 😍",
 ];
 
 let messageIndex = 0;
@@ -28,11 +28,9 @@ function handleNoClick() {
   document.querySelector(".no-button").textContent = messages[messageIndex];
   messageIndex = (messageIndex + 1) % messages.length;
 
-  // Grow Yes button
   const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
   yesButton.style.fontSize = `${currentSize * 1.2}px`;
 
-  // Change text color randomly
   yesButton.style.color = `rgb(${Math.random() * 255}, ${
     Math.random() * 255
   }, ${Math.random() * 255})`;
@@ -41,7 +39,6 @@ function handleNoClick() {
 function handleYesClick() {
   alert("THANK YOUUUU!!! Pookieeee ❤️❤️❤️");
 
-  // Crazy confetti
   let count = 200;
   let defaults = {
     origin: { y: 0.7 },
@@ -64,7 +61,6 @@ function handleYesClick() {
   fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
   fire(0.1, { spread: 120, startVelocity: 45 });
 
-  // Flashy Background Effect
   let flashInterval = setInterval(() => {
     document.body.style.backgroundColor = `rgb(${Math.random() * 255}, ${
       Math.random() * 255
@@ -76,7 +72,6 @@ function handleYesClick() {
     document.body.style.backgroundColor = "";
   }, 2000);
 
-  // Play Sound
   const yaySound = new Audio("yay.mp3");
   yaySound.play();
 
