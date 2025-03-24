@@ -22,7 +22,6 @@ function moveNoButton() {
 }
 
 function handleNoClick() {
-  const noButton = document.querySelector(".no-button");
   const yesButton = document.querySelector(".yes-button");
   moveNoButton();
   document.querySelector(".no-button").textContent = messages[messageIndex];
@@ -48,11 +47,11 @@ function handleYesClick() {
   };
 
   function fire(particleRatio, opts) {
-    confetti(
-      Object.assign({}, defaults, opts, {
-        particleCount: Math.floor(count * particleRatio),
-      })
-    );
+    confetti({
+      ...defaults,
+      ...opts,
+      particleCount: Math.floor(count * particleRatio),
+    });
   }
 
   fire(0.25, { spread: 26, startVelocity: 55 });

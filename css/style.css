@@ -56,7 +56,7 @@ body {
   font-size: 1.5rem;
   width: 100%;
   height: 100vh;
-  background: url(../assets/images/langing.png) no-repeat;
+  background: url(../assets/images/landingx.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -80,7 +80,7 @@ body {
 }
 .sub {
   font-size: 1.5rem;
-  color: rgb(113, 113, 113);
+  color: rgb(229, 229, 229);
   font-weight: 400;
 }
 .land {
@@ -127,7 +127,7 @@ nav ul li a:hover::after {
 #capsule {
   width: 100%;
   height: 100%;
-  background: url(../assets/images/capsule.jpg) no-repeat;
+  background: url(../assets/images/capsulex.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 250px 200px;
