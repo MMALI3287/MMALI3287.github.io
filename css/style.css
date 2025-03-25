@@ -97,9 +97,11 @@ body {
 #contact {
   margin-bottom: 0;
   padding-bottom: 0;
+  margin-bottom: -20px;
+  padding-bottom: 50px;
 }
 
-.copyright {
+#footer {
   margin-bottom: 0;
   padding: 20px 0;
   width: 100%;

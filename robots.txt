@@ -1,8 +1,10 @@
-# robots.txt for https://mmali3287.github.io
+# robots.txt for MMALI3287.github.io
 User-agent: *
 Allow: /
-Disallow: /Old/
-Disallow: /cgi-bin/
 
-# Sitemap
+# Allow access to all content
+Disallow: /assets/pages/valentine/    # Optional: disallow Valentine-specific pages if they're not meant for search
+Disallow: /.history/                  # Exclude version history folder from indexing
+
+# Point to sitemap
 Sitemap: https://mmali3287.github.io/sitemap.xml

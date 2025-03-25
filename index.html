@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta
       name="description"
-      content="A personal portfolio website of Musaddique Ali aka MMALI3287. It contains expertise development, experience and educational background. You can contact me through the form given below. I will try to reach you as soon as possible"
+      content="Professional portfolio of Musaddique Ali (MMALI3287), a software developer specializing in web development, mobile app development, and game development. Featuring projects in C++, Java, Flutter, Unity, and more."
     />
     <meta
       name="keywords"
-      content="Web Developer, Programmer, Software Engineer, Continuous Learner"
+      content="Web Developer, Software Engineer, Mobile App Developer, Game Developer, Flutter Developer, Unity Developer, C++ Programmer, Java Developer, MMALI3287, Musaddique Ali, Software Development Portfolio"
     />
     <meta name="github:url" content="https://github.com/MMALI3287" />
     <meta name="github:username" content="MMALI3287" />
@@ -28,11 +28,25 @@
     <meta name="googlebot" content="index, follow" />
     <meta name="google" content="nositelinkssearchbox" />
     <meta name="google" content="notranslate" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Musaddique Ali - Software Developer Portfolio" />
+    <meta property="og:description" content="Professional portfolio of Musaddique Ali, a software developer specializing in web development, mobile app development, and game development." />
+    <meta property="og:image" content="https://mmali3287.github.io/assets/images/abtmex.jpg" />
+    <meta property="og:url" content="https://mmali3287.github.io/" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Musaddique Ali - Software Developer Portfolio" />
+    <meta name="twitter:description" content="Professional portfolio of Musaddique Ali, a software developer specializing in web development, mobile app development, and game development." />
+    <meta name="twitter:image" content="https://mmali3287.github.io/assets/images/abtmex.jpg" />
+    
     <meta
       name="DC.title"
-      content="Musaddique Ali - Web Developer, Programmer"
+      content="Musaddique Ali - Software Developer Portfolio"
     />
-    <title>Musaddique Ali - Web Development, Programmer</title>
+    <title>Musaddique Ali - Software Developer Portfolio</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -82,10 +96,35 @@
 
       gtag("config", "G-VLNF64TM34");
     </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Musaddique Ali",
+      "url": "https://mmali3287.github.io/",
+      "sameAs": [
+        "https://github.com/MMALI3287",
+        "https://www.linkedin.com/in/musaddique-ali/",
+        "https://twitter.com/MMALI3287"
+      ],
+      "jobTitle": "Software Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Teton Private Ltd"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Ahsanullah University of Science and Technology"
+      },
+      "knowsAbout": ["Web Development", "Mobile App Development", "Game Development", "C++", "Java", "Flutter", "Unity"]
+    }
+    </script>
   </head>
   <body>
-    <div id="header">
-      <nav class="navbar navbar-expand-lg position-fixed top-0">
+    <header id="header" role="banner">
+      <nav class="navbar navbar-expand-lg position-fixed top-0" aria-label="Main navigation">
         <div class="container-fluid">
           <a class="navbar-brand logo text-light" href="#">
             <img src="assets/images/logo.png" alt="logo" height="120" />
@@ -137,508 +176,497 @@
           <span><i class="fas fa-book-reader"></i> Continuous Learner</span>
         </div>
       </div>
-    </div>
-    <div class="abt">
-      <div
-        class="container"
-        id="portfolio"
-        data-aos="zoom-in-up"
-        data-aos-anchor-placement="top-center"
-      >
-        <div class="row">
-          <div class="col-md-3">
-            <p class="biog">Biography</p>
-            <p class="subtext">
-              I am Musaddique, <br />
-              A software developer <br />
-              From Bangladesh
-            </p>
-            <p class="biog">Contact</p>
-            <p class="subtext">
-              Aftabnagar, Dhaka
-              <br />erfanali3287@gmail.com<br />+8801793515517
-            </p>
-            <p class="biog">Expertise</p>
-            <p class="subtext bot">
-              Website Design <br />Mobile application Development <br />Game
-              Development
-            </p>
-          </div>
-          <div class="col-md-6 capbord">
-            <div id="capsule"></div>
-          </div>
-          <div class="col-md-3">
-            <p class="biogtextend text-end">Years of Experience</p>
-            <p class="subtext2 text-end">2 years</p>
-            <p class="biogtextend text-end">Satisfaction Client</p>
-            <p class="subtext2 text-end">100%</p>
-            <p class="biogtextend text-end">Volunteer Works</p>
-            <p class="subtext2 text-end">5+</p>
-            <p class="biogtextend text-end">Projects</p>
-            <p class="subtext2 text-end">10+</p>
+    </header>
+    <main>
+      <section class="abt">
+        <div
+          class="container"
+          id="portfolio"
+          data-aos="zoom-in-up"
+          data-aos-anchor-placement="top-center"
+        >
+          <div class="row">
+            <div class="col-md-3">
+              <p class="biog">Biography</p>
+              <p class="subtext">
+                I am Musaddique, <br />
+                A software developer <br />
+                From Bangladesh
+              </p>
+              <p class="biog">Contact</p>
+              <p class="subtext">
+                Aftabnagar, Dhaka
+                <br />erfanali3287@gmail.com<br />+8801793515517
+              </p>
+              <p class="biog">Expertise</p>
+              <p class="subtext bot">
+                Website Design <br />Mobile application Development <br />Game
+                Development
+              </p>
+            </div>
+            <div class="col-md-6 capbord">
+              <div id="capsule"></div>
+            </div>
+            <div class="col-md-3">
+              <p class="biogtextend text-end">Years of Experience</p>
+              <p class="subtext2 text-end">2 years</p>
+              <p class="biogtextend text-end">Satisfaction Client</p>
+              <p class="subtext2 text-end">100%</p>
+              <p class="biogtextend text-end">Volunteer Works</p>
+              <p class="subtext2 text-end">5+</p>
+              <p class="biogtextend text-end">Projects</p>
+              <p class="subtext2 text-end">10+</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="advantage bg-dark text-center"
-        id="expertise"
-        data-aos="zoom-in-up"
-        data-aos-anchor-placement="top-center"
-      >
+        <div
+          class="advantage bg-dark text-center"
+          id="expertise"
+          data-aos="zoom-in-up"
+          data-aos-anchor-placement="top-center"
+        >
+          <div class="container">
+            <div class="row">
+              <p class="mexp">My Expertise</p>
+              <p class="text-light mb-5 expertise-subtitle">
+                Always evolving, constantly improving
+              </p>
+            </div>
+            <div class="row">
+              <div
+                class="col-md-2 skill-box"
+                data-aos="flip-left"
+                data-aos-delay="100"
+              >
+                <img
+                  src="assets/images/c-.png"
+                  height="100px"
+                  width="100px"
+                  alt="c++"
+                />
+                <br />
+                <p class="text-light h1 mb-5 mt-5 fw-bold skill-percentage">
+                  91%
+                </p>
+                <p class="text-light h5 p-5">C++</p>
+              </div>
+              <div
+                class="col-md-2 skill-box"
+                data-aos="flip-left"
+                data-aos-delay="200"
+              >
+                <img
+                  src="assets/images/android-icon.svg"
+                  height="100px"
+                  width="100px"
+                  alt="android"
+                /><br />
+                <p class="text-light h1 mb-5 mt-5 fw-bold skill-percentage">
+                  84%
+                </p>
+                <p class="text-light h5 p-5">Android</p>
+              </div>
+              <div
+                class="col-md-2 skill-box"
+                data-aos="flip-left"
+                data-aos-delay="300"
+              >
+                <img
+                  src="assets/images/flutterio-icon.svg"
+                  height="100px"
+                  width="100px"
+                  alt="flutter"
+                /><br />
+                <p class="text-light h1 mb-5 mt-5 fw-bold skill-percentage">
+                  78%
+                </p>
+                <p class="text-light h5 p-5">Flutter</p>
+              </div>
+              <div
+                class="col-md-2 skill-box"
+                data-aos="flip-left"
+                data-aos-delay="400"
+              >
+                <img
+                  src="assets/images/unity.png"
+                  height="100px"
+                  width="100px"
+                  alt="unity"
+                /><br />
+                <p class="text-light h1 mb-5 mt-5 fw-bold skill-percentage">
+                  76%
+                </p>
+                <p class="text-light h5 p-5">Unity</p>
+              </div>
+              <div
+                class="col-md-2 skill-box"
+                data-aos="flip-left"
+                data-aos-delay="500"
+              >
+                <img
+                  src="assets/images/ADBE.svg"
+                  height="100px"
+                  width="100px"
+                  alt="adobe"
+                /><br />
+                <p class="text-light h1 mb-5 mt-5 fw-bold skill-percentage">
+                  83%
+                </p>
+                <p class="text-light h5 p-5">Adobe</p>
+              </div>
+              <div
+                class="col-md-2 skill-box"
+                data-aos="flip-left"
+                data-aos-delay="600"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_365_%282022%29.svg"
+                  height="100px"
+                  width="100px"
+                  alt="microsoft office"
+                /><br />
+                <p class="text-light h1 mb-5 mt-5 fw-bold skill-percentage">
+                  94%
+                </p>
+                <p class="text-light h5 p-5">Office</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- * about -->
+      <section id="about" data-aos="zoom-in-up" data-aos-anchor-placement="top-center">
+        <div class="container">
+          <div class="rowc">
+            <div
+              class="about-col-1"
+              data-aos="fade-right"
+              data-aos-duration="800"
+            >
+              <img src="assets/images/abtmex.jpg" alt="user" />
+            </div>
+            <div class="about-col-2" data-aos="fade-left" data-aos-duration="800">
+              <h2 class="sub-title text-dark">About Me</h2>
+              <p class="growth-mindset">
+                <i class="fas fa-seedling"></i> Embracing growth and continuous
+                improvement
+              </p>
+              <p class="h5 fw-500">
+                Software developer with 2 years of experience in mobile app
+                development, game optimization, and QA at Teton Private Ltd.
+                Skilled in various programming languages and frameworks with
+                strong problem-solving abilities. Passionate about exploring new
+                technologies and continuous learning.
+              </p>
+              <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">
+                  Skills
+                </p>
+                <p class="tab-links" onclick="opentab('experience')">
+                  Experience
+                </p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+              </div>
+              <div class="tab-contents-container">
+                <div class="tab-contents active-tab" id="skills">
+                <ul>
+                  <li>
+                    <span>Programming Languages</span><br />C++, Java, Python, PHP
+                  </li>
+                  <li>
+                    <span>Tools & Frameworks</span><br />Flutter, React, ASP.NET,
+                    Unity, Microsoft Office Suite, Adobe Creative Suite
+                  </li>
+                  <li>
+                    <span>Core Concepts</span><br />Object-Oriented Programming,
+                    Web Services, MySQL (RDBMS), API Integration
+                  </li>
+                  <li><span>Methodologies</span><br />Agile Development</li>
+                  <li><span>Languages</span><br />English (Advanced)</li>
+                  <li>
+                    <span>Certifications</span><br />Information Technology
+                    Engineers Examination (April 2024)
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="experience">
+                <ul>
+                  <li>
+                    <span>August 2022 - Present</span><br /><b>
+                      Engineer, Software at Teton Private Ltd</b
+                    ><br />
+                    • Developed Flutter modules for mobile app development<br />
+                    • Executed QA and bug testing for 5 hardware/software
+                    applications<br />
+                    • Assisted in game optimization with Unity, achieving 25%
+                    performance increase<br />
+                    • Streamlined code review processes for 10 different
+                    modules<br />
+                    • Applied OOP principles to develop efficient and maintainable
+                    code
+                  </li>
+                  <li>
+                    <span>January 2022 - June 2023</span><br /><b
+                      >Executive Panel Member at AUST Robotics Club</b
+                    ><br />
+                    • Organized the inaugural AUSTRC National Fest<br />
+                    • Developed leadership skills through collaborative event
+                    planning
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="education">
+                <ul>
+                  <li>
+                    <span>2020 - Present</span><br /><b
+                      >BSc. in Computer Science and Engineering</b
+                    ><br />
+                    Ahsanullah University of Science and Technology<br />
+                    GPA: 3.37
+                  </li>
+                  <li>
+                    <span>2018 - 2020</span> <br />
+                    <b>Higher Secondary Certificate</b><br />
+                    Saint Joseph Higher Secondary School and College<br />
+                    Asad Avenue, Dhaka
+                  </li>
+                  <li>
+                    <span>2016 - 2018</span><br />
+                    <b>Secondary School Certificate</b><br />
+                    Ideal School and College<br />
+                    Motijheel, Dhaka
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- * Expertise -->
+      <section id="Expertise" data-aos="zoom-in-up" data-aos-anchor-placement="top-center">
+        <div class="container">
+          <h2 class="sub-title">My Services</h2>
+          <p class="services-subtitle">
+            Dedicated to delivering quality solutions while continuously expanding
+            my capabilities
+          </p>
+          <div class="Expertise-list">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+              <i class="fa-solid fa-crop"></i>
+              <h2>Game Development</h2>
+              <p>
+                Game Development is the art of creating captivating and immersive
+                interactive experiences. It combines technical expertise, artistic
+                creativity, and player psychology to craft unforgettable games.
+              </p>
+              <a
+                href="https://www.freecodecamp.org/news/what-is-game-development/"
+                class="hvr-icon-forward"
+                >Learn more <i class="fa fa-chevron-right hvr-icon"></i
+              ></a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+              <i class="fa-solid fa-code"></i>
+              <h2>Web Development</h2>
+              <p>
+                Web Development is the process of building and maintaining
+                websites and web applications. I create responsive, user-friendly
+                interfaces using modern frameworks and best practices for optimal
+                performance.
+              </p>
+              <a
+                href="https://brainstation.io/career-guides/what-is-web-development"
+                class="hvr-icon-forward"
+                >Learn more <i class="fa fa-chevron-right hvr-icon"></i
+              ></a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+              <i class="fa-solid fa-mobile-screen"></i>
+              <h2>App Development</h2>
+              <p>
+                App Development is the process of creating mobile applications
+                that provide value to users. Using Flutter and Android platforms,
+                I build cross-platform solutions that function seamlessly across
+                devices.
+              </p>
+              <a
+                href="https://orases.com/what-is-app-development/"
+                class="hvr-icon-forward"
+                >Learn more <i class="fa fa-chevron-right hvr-icon"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- -------------------portfolio------------------- -->
+      <section id="projects" data-aos="zoom-in-up" data-aos-anchor-placement="top-center">
+        <div class="container">
+          <h2 class="sub-title text-dark">My Latest Projects</h2>
+          <p class="projects-subtitle">
+            Building experience one project at a time
+          </p>
+          <div class="work-list">
+            <div class="work" data-aos="flip-up" data-aos-delay="100">
+              <div class="p-2 rounded-3 border project-image">
+                <img
+                  src="assets/images/wordmaestro.jpg"
+                  height="250px"
+                  alt="Word Maestro"
+                />
+              </div>
+              <div class="layer">
+                <p class="text-light h1">Word Maestro</p>
+                <p class="text-light h5 mt-3">
+                  A puzzle game made with C++ for all ages
+                </p>
+                <a href="https://github.com/MMALI3287/Word-Maestro"
+                  ><i class="fa-sharp fa-solid fa-up-right-from-square"></i
+                ></a>
+              </div>
+              <p class="h3 mt-4">Word Maestro</p>
+              <p class="h6">Game Development with C++</p>
+            </div>
+            <div class="work" data-aos="flip-up" data-aos-delay="200">
+              <div class="p-2 rounded-3 border project-image">
+                <img
+                  src="assets/images/resortadmin.jpg"
+                  height="250px"
+                  alt="Resort Administration"
+                />
+              </div>
+              <div class="layer">
+                <p class="text-light h1">Resort Administration</p>
+                <p class="text-light h5 mt-3">
+                  A database application made with MySQL and Java in NetBeans to
+                  manage a resort
+                </p>
+                <a href="https://github.com/MMALI3287/Resort-Administration"
+                  ><i class="fa-sharp fa-solid fa-up-right-from-square"></i
+                ></a>
+              </div>
+              <p class="h3 mt-4">Resort Administration</p>
+              <p class="h6">Software Development with Java</p>
+            </div>
+            <div class="work" data-aos="flip-up" data-aos-delay="300">
+              <div class="p-2 rounded-3 border project-image">
+                <img src="assets/images/reuse.png" height="250px" alt="ReUse" />
+              </div>
+              <div class="layer">
+                <p class="text-light h1">ReUse</p>
+                <p class="text-light h5 mt-3">
+                  An android application to donate unwanted items to the needy
+                </p>
+                <a href="https://github.com/MMALI3287/ReUse"
+                  ><i class="fa-sharp fa-solid fa-up-right-from-square"></i
+                ></a>
+              </div>
+              <p class="h3 mt-4">ReUse</p>
+              <p class="h6">Mobile Development with Android</p>
+            </div>
+          </div>
+          <a
+            href="https://github.com/MMALI3287?tab=repositories"
+            class="btnc text-dark hvr-bounce-to-right"
+            >See more</a
+          >
+        </div>
+      </section>
+      <!-- -------------------contact------------------- -->
+      <section id="contact">
         <div class="container">
           <div class="row">
-            <p class="mexp">My Expertise</p>
-            <p class="text-light mb-5 expertise-subtitle">
-              Always evolving, constantly improving
-            </p>
-          </div>
-          <div class="row">
             <div
-              class="col-md-2 skill-box"
-              data-aos="flip-left"
-              data-aos-delay="100"
+              class="contact-left"
+              data-aos="fade-right"
+              data-aos-duration="800"
             >
-              <img
-                src="assets/images/c-.png"
-                height="100px"
-                width="100px"
-                alt="c++"
-              />
-              <br />
-              <p class="text-light h1 mb-5 mt-5 fw-bold skill-percentage">
-                91%
+              <h2 class="sub-title">Contact Me</h2>
+              <p class="contact-subtitle">
+                Let's connect and discuss how we can work together
               </p>
-              <p class="text-light h5 p-5">C++</p>
+              <p class="text-light">
+                <i class="fa-solid fa-envelope"></i> erfanali3287@gmail.com
+              </p>
+              <p class="text-light">
+                <i class="fa-solid fa-phone"></i> +880 1793 515 517
+              </p>
+              <p class="text-light">
+                <i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh
+              </p>
+              <div class="social-icons">
+                <a
+                  href="https://www.facebook.com/musaddique.mmali/"
+                  title="Facebook Profile"
+                  class="hvr-float"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+                <a
+                  href="https://twitter.com/MusaddiqueMMALI/"
+                  title="Twitter Profile"
+                  class="hvr-float"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/mdmusaddiquealierfan/"
+                  title="Instagram Profile"
+                  class="hvr-float"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/musaddique-ali/"
+                  title="LinkedIn Profile"
+                  class="hvr-float"
+                  ><i class="fa-brands fa-linkedin"></i
+                ></a>
+                <a
+                  href="https://github.com/MMALI3287/"
+                  title="GitHub Profile"
+                  class="hvr-float"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </div>
+              <a
+                href="images/resume.pdf"
+                download
+                class="btnc btn2 hvr-grow"
+                title="Download Resume"
+                >Download Resume</a
+              >
             </div>
             <div
-              class="col-md-2 skill-box"
-              data-aos="flip-left"
-              data-aos-delay="200"
+              class="contact-right"
+              data-aos="fade-left"
+              data-aos-duration="800"
             >
-              <img
-                src="assets/images/android-icon.svg"
-                height="100px"
-                width="100px"
-                alt="android"
-              /><br />
-              <p class="text-light h1 mb-5 mt-5 fw-bold skill-percentage">
-                84%
-              </p>
-              <p class="text-light h5 p-5">Android</p>
-            </div>
-            <div
-              class="col-md-2 skill-box"
-              data-aos="flip-left"
-              data-aos-delay="300"
-            >
-              <img
-                src="assets/images/flutterio-icon.svg"
-                height="100px"
-                width="100px"
-                alt="flutter"
-              /><br />
-              <p class="text-light h1 mb-5 mt-5 fw-bold skill-percentage">
-                78%
-              </p>
-              <p class="text-light h5 p-5">Flutter</p>
-            </div>
-            <div
-              class="col-md-2 skill-box"
-              data-aos="flip-left"
-              data-aos-delay="400"
-            >
-              <img
-                src="assets/images/unity.png"
-                height="100px"
-                width="100px"
-                alt="unity"
-              /><br />
-              <p class="text-light h1 mb-5 mt-5 fw-bold skill-percentage">
-                76%
-              </p>
-              <p class="text-light h5 p-5">Unity</p>
-            </div>
-            <div
-              class="col-md-2 skill-box"
-              data-aos="flip-left"
-              data-aos-delay="500"
-            >
-              <img
-                src="assets/images/ADBE.svg"
-                height="100px"
-                width="100px"
-                alt="adobe"
-              /><br />
-              <p class="text-light h1 mb-5 mt-5 fw-bold skill-percentage">
-                83%
-              </p>
-              <p class="text-light h5 p-5">Adobe</p>
-            </div>
-            <div
-              class="col-md-2 skill-box"
-              data-aos="flip-left"
-              data-aos-delay="600"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_365_%282022%29.svg"
-                height="100px"
-                width="100px"
-                alt="microsoft office"
-              /><br />
-              <p class="text-light h1 mb-5 mt-5 fw-bold skill-percentage">
-                94%
-              </p>
-              <p class="text-light h5 p-5">Office</p>
+              <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required />
+                <input
+                  type="email"
+                  name="E-Mail"
+                  placeholder="Your Email"
+                  required
+                />
+                <textarea
+                  name="Message"
+                  rows="6"
+                  placeholder="Your Message"
+                ></textarea>
+                <button type="submit" class="btnc btn2 hvr-grow">Send</button>
+              </form>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- * about -->
-    <div
-      id="about"
-      data-aos="zoom-in-up"
-      data-aos-anchor-placement="top-center"
-    >
-      <div class="container">
-        <div class="rowc">
-          <div
-            class="about-col-1"
-            data-aos="fade-right"
-            data-aos-duration="800"
-          >
-            <img src="assets/images/abtmex.jpg" alt="user" />
-          </div>
-          <div class="about-col-2" data-aos="fade-left" data-aos-duration="800">
-            <h2 class="sub-title text-dark">About Me</h2>
-            <p class="growth-mindset">
-              <i class="fas fa-seedling"></i> Embracing growth and continuous
-              improvement
-            </p>
-            <p class="h5 fw-500">
-              Software developer with 2 years of experience in mobile app
-              development, game optimization, and QA at Teton Private Ltd.
-              Skilled in various programming languages and frameworks with
-              strong problem-solving abilities. Passionate about exploring new
-              technologies and continuous learning.
-            </p>
-            <div class="tab-titles">
-              <p class="tab-links active-link" onclick="opentab('skills')">
-                Skills
-              </p>
-              <p class="tab-links" onclick="opentab('experience')">
-                Experience
-              </p>
-              <p class="tab-links" onclick="opentab('education')">Education</p>
-            </div>
-            <div class="tab-contents-container">
-              <div class="tab-contents active-tab" id="skills">
-              <ul>
-                <li>
-                  <span>Programming Languages</span><br />C++, Java, Python, PHP
-                </li>
-                <li>
-                  <span>Tools & Frameworks</span><br />Flutter, React, ASP.NET,
-                  Unity, Microsoft Office Suite, Adobe Creative Suite
-                </li>
-                <li>
-                  <span>Core Concepts</span><br />Object-Oriented Programming,
-                  Web Services, MySQL (RDBMS), API Integration
-                </li>
-                <li><span>Methodologies</span><br />Agile Development</li>
-                <li><span>Languages</span><br />English (Advanced)</li>
-                <li>
-                  <span>Certifications</span><br />Information Technology
-                  Engineers Examination (April 2024)
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="experience">
-              <ul>
-                <li>
-                  <span>August 2022 - Present</span><br /><b>
-                    Engineer, Software at Teton Private Ltd</b
-                  ><br />
-                  • Developed Flutter modules for mobile app development<br />
-                  • Executed QA and bug testing for 5 hardware/software
-                  applications<br />
-                  • Assisted in game optimization with Unity, achieving 25%
-                  performance increase<br />
-                  • Streamlined code review processes for 10 different
-                  modules<br />
-                  • Applied OOP principles to develop efficient and maintainable
-                  code
-                </li>
-                <li>
-                  <span>January 2022 - June 2023</span><br /><b
-                    >Executive Panel Member at AUST Robotics Club</b
-                  ><br />
-                  • Organized the inaugural AUSTRC National Fest<br />
-                  • Developed leadership skills through collaborative event
-                  planning
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="education">
-              <ul>
-                <li>
-                  <span>2020 - Present</span><br /><b
-                    >BSc. in Computer Science and Engineering</b
-                  ><br />
-                  Ahsanullah University of Science and Technology<br />
-                  GPA: 3.37
-                </li>
-                <li>
-                  <span>2018 - 2020</span> <br />
-                  <b>Higher Secondary Certificate</b><br />
-                  Saint Joseph Higher Secondary School and College<br />
-                  Asad Avenue, Dhaka
-                </li>
-                <li>
-                  <span>2016 - 2018</span><br />
-                  <b>Secondary School Certificate</b><br />
-                  Ideal School and College<br />
-                  Motijheel, Dhaka
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- * Expertise -->
-    <div
-      id="Expertise"
-      data-aos="zoom-in-up"
-      data-aos-anchor-placement="top-center"
-    >
-      <div class="container">
-        <h2 class="sub-title">My Services</h2>
-        <p class="services-subtitle">
-          Dedicated to delivering quality solutions while continuously expanding
-          my capabilities
-        </p>
-        <div class="Expertise-list">
-          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-            <i class="fa-solid fa-crop"></i>
-            <h2>Game Development</h2>
-            <p>
-              Game Development is the art of creating captivating and immersive
-              interactive experiences. It combines technical expertise, artistic
-              creativity, and player psychology to craft unforgettable games.
-            </p>
-            <a
-              href="https://www.freecodecamp.org/news/what-is-game-development/"
-              class="hvr-icon-forward"
-              >Learn more <i class="fa fa-chevron-right hvr-icon"></i
-            ></a>
-          </div>
-          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-            <i class="fa-solid fa-code"></i>
-            <h2>Web Development</h2>
-            <p>
-              Web Development is the process of building and maintaining
-              websites and web applications. I create responsive, user-friendly
-              interfaces using modern frameworks and best practices for optimal
-              performance.
-            </p>
-            <a
-              href="https://brainstation.io/career-guides/what-is-web-development"
-              class="hvr-icon-forward"
-              >Learn more <i class="fa fa-chevron-right hvr-icon"></i
-            ></a>
-          </div>
-          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-            <i class="fa-solid fa-mobile-screen"></i>
-            <h2>App Development</h2>
-            <p>
-              App Development is the process of creating mobile applications
-              that provide value to users. Using Flutter and Android platforms,
-              I build cross-platform solutions that function seamlessly across
-              devices.
-            </p>
-            <a
-              href="https://orases.com/what-is-app-development/"
-              class="hvr-icon-forward"
-              >Learn more <i class="fa fa-chevron-right hvr-icon"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- -------------------portfolio------------------- -->
-    <div
-      id="projects"
-      data-aos="zoom-in-up"
-      data-aos-anchor-placement="top-center"
-    >
-      <div class="container">
-        <h2 class="sub-title text-dark">My Latest Projects</h2>
-        <p class="projects-subtitle">
-          Building experience one project at a time
-        </p>
-        <div class="work-list">
-          <div class="work" data-aos="flip-up" data-aos-delay="100">
-            <div class="p-2 rounded-3 border project-image">
-              <img
-                src="assets/images/wordmaestro.jpg"
-                height="250px"
-                alt="Word Maestro"
-              />
-            </div>
-            <div class="layer">
-              <p class="text-light h1">Word Maestro</p>
-              <p class="text-light h5 mt-3">
-                A puzzle game made with C++ for all ages
-              </p>
-              <a href="https://github.com/MMALI3287/Word-Maestro"
-                ><i class="fa-sharp fa-solid fa-up-right-from-square"></i
-              ></a>
-            </div>
-            <p class="h3 mt-4">Word Maestro</p>
-            <p class="h6">Game Development with C++</p>
-          </div>
-          <div class="work" data-aos="flip-up" data-aos-delay="200">
-            <div class="p-2 rounded-3 border project-image">
-              <img
-                src="assets/images/resortadmin.jpg"
-                height="250px"
-                alt="Resort Administration"
-              />
-            </div>
-            <div class="layer">
-              <p class="text-light h1">Resort Administration</p>
-              <p class="text-light h5 mt-3">
-                A database application made with MySQL and Java in NetBeans to
-                manage a resort
-              </p>
-              <a href="https://github.com/MMALI3287/Resort-Administration"
-                ><i class="fa-sharp fa-solid fa-up-right-from-square"></i
-              ></a>
-            </div>
-            <p class="h3 mt-4">Resort Administration</p>
-            <p class="h6">Software Development with Java</p>
-          </div>
-          <div class="work" data-aos="flip-up" data-aos-delay="300">
-            <div class="p-2 rounded-3 border project-image">
-              <img src="assets/images/reuse.png" height="250px" alt="ReUse" />
-            </div>
-            <div class="layer">
-              <p class="text-light h1">ReUse</p>
-              <p class="text-light h5 mt-3">
-                An android application to donate unwanted items to the needy
-              </p>
-              <a href="https://github.com/MMALI3287/ReUse"
-                ><i class="fa-sharp fa-solid fa-up-right-from-square"></i
-              ></a>
-            </div>
-            <p class="h3 mt-4">ReUse</p>
-            <p class="h6">Mobile Development with Android</p>
-          </div>
-        </div>
-        <a
-          href="https://github.com/MMALI3287?tab=repositories"
-          class="btnc text-dark hvr-bounce-to-right"
-          >See more</a
-        >
-      </div>
-    </div>
-    <!-- -------------------contact------------------- -->
-    <div id="contact">
-      <div class="container">
-        <div class="row">
-          <div
-            class="contact-left"
-            data-aos="fade-right"
-            data-aos-duration="800"
-          >
-            <h2 class="sub-title">Contact Me</h2>
-            <p class="contact-subtitle">
-              Let's connect and discuss how we can work together
-            </p>
-            <p class="text-light">
-              <i class="fa-solid fa-envelope"></i> erfanali3287@gmail.com
-            </p>
-            <p class="text-light">
-              <i class="fa-solid fa-phone"></i> +880 1793 515 517
-            </p>
-            <p class="text-light">
-              <i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh
-            </p>
-            <div class="social-icons">
-              <a
-                href="https://www.facebook.com/musaddique.mmali/"
-                title="Facebook Profile"
-                class="hvr-float"
-                ><i class="fa-brands fa-facebook"></i
-              ></a>
-              <a
-                href="https://twitter.com/MusaddiqueMMALI/"
-                title="Twitter Profile"
-                class="hvr-float"
-                ><i class="fa-brands fa-twitter"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/mdmusaddiquealierfan/"
-                title="Instagram Profile"
-                class="hvr-float"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/musaddique-ali/"
-                title="LinkedIn Profile"
-                class="hvr-float"
-                ><i class="fa-brands fa-linkedin"></i
-              ></a>
-              <a
-                href="https://github.com/MMALI3287/"
-                title="GitHub Profile"
-                class="hvr-float"
-                ><i class="fa-brands fa-github"></i
-              ></a>
-            </div>
-            <a
-              href="images/resume.pdf"
-              download
-              class="btnc btn2 hvr-grow"
-              title="Download Resume"
-              >Download Resume</a
-            >
-          </div>
-          <div
-            class="contact-right"
-            data-aos="fade-left"
-            data-aos-duration="800"
-          >
-            <form name="submit-to-google-sheet">
-              <input type="text" name="Name" placeholder="Your Name" required />
-              <input
-                type="email"
-                name="E-Mail"
-                placeholder="Your Email"
-                required
-              />
-              <textarea
-                name="Message"
-                rows="6"
-                placeholder="Your Message"
-              ></textarea>
-              <button type="submit" class="btnc btn2 hvr-grow">Send</button>
-            </form>
-            <span id="msg"></span>
-          </div>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>
-          Copyright © Musaddique Ali. Thank you for visiting
-          <i class="fas fa-heart"></i>
-        </p>
-        <p class="lifelong-learner">
-          A lifelong learner committed to growth and excellence
-        </p>
-      </div>
-    </div>
+      </section>
+    </main>
+    <footer id="footer">
+      <p class="text-light">
+        Copyright © Musaddique Ali. Thank you for visiting
+        <i class="fas fa-heart"></i>
+      </p>
+      <p class="lifelong-learner">
+        A lifelong learner committed to growth and excellence
+      </p>
+    </footer>
 
     <!-- Main Scripts -->
     <script src="js/bootstrap.js"></script>
@@ -652,13 +680,6 @@
           easing: "ease-in-out",
           once: false,
           mirror: false,
-        });
-
-        // Remove the navbar navigation functionality completely
-        // This will disable the automatic scrolling when clicking navbar links
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          // Remove the click event listeners that were causing scrolling issues
-          // Users will need to manually scroll to sections
         });
       });
 

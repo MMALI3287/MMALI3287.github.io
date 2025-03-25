@@ -1,85 +1,72 @@
-# Musaddique Ali - Personal Portfolio
+# Musaddique Ali's Portfolio Website
 
-This repository contains the code for Musaddique Ali's personal portfolio website, showcasing skills, projects, experience, and contact information.
+This repository contains the source code for my personal portfolio website, showcasing my skills, projects, and professional experience in software development.
 
-## 🌐 Live Demo
+## 🚀 Live Site
 
-Visit the live website: [musaddiqueali.com](https://musaddiqueali.com)
+[Visit My Portfolio](https://mmali3287.github.io/)
 
-## ✨ Features
+## 📋 Features
 
-- Responsive design for all device sizes
-- Animated sections using AOS (Animate On Scroll) library
-- Interactive UI elements
-- Project showcase with links to GitHub repositories
-- Skills and expertise visualization
-- Contact form
-- Resume download option
-- Social media links
-- Interactive mini-applications (Valentine page, BDO Checklist)
+- **Responsive Design**: Optimized for all devices from mobile to desktop
+- **Interactive UI**: Smooth animations using GSAP and AOS libraries
+- **Project Showcase**: Highlighting major development projects with links and descriptions
+- **Skills Visualization**: Visual representation of technical expertise
+- **Contact Form**: Direct email contact functionality
 
 ## 🛠️ Technologies Used
 
-- **HTML5** - Structure and content
-- **CSS3** - Styling and animations
-- **JavaScript** - Interactivity and form handling
-- **Bootstrap 5.3.0** - Responsive framework
-- **Font Awesome** - Icons
-- **AOS Library** - Scroll animations
-- **Google Analytics** - Website analytics
+- **Frontend**:
 
-## 📂 Project Structure
+  - HTML5
+  - CSS3 (with Bootstrap framework)
+  - JavaScript
+  - GSAP Animation Library
+  - AOS (Animate On Scroll)
+  - ScrollTrigger
 
-- `index.html` - Main website structure
-- `css/` - Style files
-  - `bootstrap.css` - Bootstrap framework
-  - `style.css` - Custom styling
-- `js/` - JavaScript files
-  - `bootstrap.js` - Bootstrap functionality
-  - `index.js` - Custom scripts
-  - `blog.js` - Blog functionality
-- `assets/` - Images, icons and other resources
-  - `pages/` - Additional website pages
-    - `BDOChecklist.html` - Black Desert Online daily checklist tool
-- `valentine/` - Interactive Valentine's Day page
+- **Tools & Libraries**:
+  - FontAwesome Icons
+  - Google Fonts
+  - Progress Bar JS
 
-## 🚀 Setup and Installation
+## 💼 Projects Featured
+
+1. **Word Maestro** - Puzzle game developed in C++
+2. **Resort Administration** - Database application built with MySQL and Java
+3. **ReUse** - Android application for donating unwanted items
+
+## 🔗 Connect With Me
+
+- [GitHub](https://github.com/MMALI3287)
+- [LinkedIn](https://www.linkedin.com/in/musaddique-ali/)
+- [Twitter](https://twitter.com/MMALI3287)
+- Email: erfanali3287@gmail.com
+
+## 📌 Professional Experience
+
+Currently working as a Software Engineer at Teton Private Ltd, focusing on:
+
+- Flutter module development
+- QA and bug testing
+- Game optimization with Unity
+
+## 🎓 Education
+
+BSc. in Computer Science and Engineering from Ahsanullah University of Science and Technology
+
+## 🛠️ Setup and Development
 
 1. Clone the repository:
+   ```
+   git clone https://github.com/MMALI3287/MMALI3287.github.io.git
+   ```
+2. Open `index.html` in your browser or use a local server
 
-```bash
-git clone https://github.com/MMALI3287/MMALI3287.github.io.git
-```
+## 📝 License
 
-2. Navigate to the project directory:
-
-```bash
-cd MMALI3287.github.io
-```
-
-3. Open `index.html` in your browser to view the website locally.
-
-## 💻 Usage
-
-This portfolio template can be modified for your own use:
-
-1. Replace personal information, projects, and images with your own
-2. Customize colors and styles in the CSS files
-3. Update the contact form to connect to your preferred backend
-4. Deploy to your own GitHub Pages or preferred hosting
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Contact
-
-- **Name:** MD Musaddique Ali Erfan
-- **Email:** erfanali3287@gmail.com
-- **GitHub:** [MMALI3287](https://github.com/MMALI3287)
-- **LinkedIn:** [Musaddique Ali](https://www.linkedin.com/in/musaddique-ali/)
-- **Twitter:** [MMALI3287](https://twitter.com/MMALI3287)
+This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-© 2022-2025 Musaddique Ali. All Rights Reserved.
+© 2023 Musaddique Ali. All rights reserved.
