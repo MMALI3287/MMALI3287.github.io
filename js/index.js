@@ -228,26 +228,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Add smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
+  // Improved smooth scrolling for anchor links
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get navbar height for offset calculations
+    const navbar = document.querySelector(".navbar");
+    const navbarHeight = navbar ? navbar.offsetHeight : 100;
 
-      const targetId = this.getAttribute("href");
-      if (targetId === "#") return;
+    // Add smooth scrolling for all internal links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
 
-      const targetElement = document.querySelector(targetId);
+        const targetId = this.getAttribute("href");
+        if (targetId === "#") return;
 
-      if (targetElement) {
-        gsap.to(window, {
-          duration: 1,
-          scrollTo: {
-            y: targetElement.offsetTop - 100,
-            offsetY: 50,
-          },
-          ease: "power3.inOut",
-        });
-      }
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          // Calculate position accounting for navbar
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition =
+            elementPosition + window.pageYOffset - navbarHeight - 20;
+
+          // Smooth scroll to target
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+
+          // If using GSAP, uncomment this and comment the window.scrollTo above
+          /*
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: {
+              y: targetElement,
+              offsetY: navbarHeight + 20
+            },
+            ease: "power3.inOut"
+          });
+          */
+        }
+      });
     });
   });
 

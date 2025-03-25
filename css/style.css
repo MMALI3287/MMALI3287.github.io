@@ -85,16 +85,32 @@
   background-color: rgba(15, 23, 42, 0.95);
 }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
-body {
-  color: var(--gray-800);
-  font-family: var(--font-body);
-  background-color: var(--light-bg);
-  line-height: 1.6;
+#contact {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.copyright {
+  margin-bottom: 0;
+  padding: 20px 0;
+  width: 100%;
+  text-align: center;
+  background: var(--primary-color);
+  font-weight: 300;
+  margin-top: auto;
+}
+
+html {
+  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
@@ -280,6 +296,28 @@ nav ul li a {
   display: inline-block;
 }
 
+.biogtextend {
+  margin-top: 6rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+  position: relative;
+  display: block;
+  text-align: left;
+}
+
+.biogtextend::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  bottom: -10px;
+  right: 0;
+  display: block;
+  text-align: right;
+}
+
 .biog::after {
   content: "";
   position: absolute;
@@ -457,7 +495,7 @@ nav ul li a {
 .sub-title {
   font-size: 3.5rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: rgba(98, 132, 210, 0.9);
   margin-bottom: 30px;
   position: relative;
   display: inline-block;
@@ -541,9 +579,19 @@ nav ul li a {
   font-family: var(--font-heading);
 }
 
+.tab-contents-container {
+  position: relative;
+  min-height: 400px;
+}
+
 .tab-contents {
-  display: none;
-  animation: fadeIn 0.5s ease forwards;
+  /* display: none;
+  animation: fadeIn 0.5s ease forwards; */
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -558,7 +606,10 @@ nav ul li a {
 }
 
 .tab-contents.active-tab {
-  display: block;
+  /* display: block; */
+  opacity: 1;
+  visibility: visible;
+  position: relative;
 }
 
 /* * Expertise */
@@ -809,7 +860,7 @@ nav ul li a {
 
 #contact {
   background: linear-gradient(135deg, var(--gray-900), var(--gray-800));
-  padding: 80px 0 0;
+  padding: 0;
 }
 
 .contact-subtitle {
@@ -903,6 +954,7 @@ form .btn2 {
   background: rgba(0, 0, 0, 0.2);
   font-weight: 300;
   margin-top: 50px;
+  margin-bottom: -105px;
 }
 
 .lifelong-learner {
@@ -1040,6 +1092,32 @@ form .btn2 {
 }
 
 /* ------------------------------- css for small screens ------------------------------ */
+
+/* Add scroll margin to section elements */
+section,
+#portfolio,
+#expertise,
+#about,
+#Expertise,
+#projects,
+#contact {
+  scroll-margin-top: 120px; /* Adjust based on navbar height */
+  scroll-behavior: smooth;
+}
+
+/* For Safari compatibility */
+@supports (-webkit-touch-callout: none) {
+  section,
+  #portfolio,
+  #expertise,
+  #about,
+  #Expertise,
+  #projects,
+  #contact {
+    padding-top: 120px;
+    margin-top: -120px;
+  }
+}
 
 @media only screen and (max-width: 991px) {
   html {
