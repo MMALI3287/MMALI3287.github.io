@@ -229,48 +229,62 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Improved smooth scrolling for anchor links
-  document.addEventListener("DOMContentLoaded", function () {
-    // Get navbar height for offset calculations
-    const navbar = document.querySelector(".navbar");
-    const navbarHeight = navbar ? navbar.offsetHeight : 100;
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
 
-    // Add smooth scrolling for all internal links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
+      const targetId = this.getAttribute("href");
+      if (targetId === "#") return;
 
-        const targetId = this.getAttribute("href");
-        if (targetId === "#") return;
+      const targetElement = document.querySelector(targetId);
 
-        const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        // Get navbar height for offset calculations
+        const navbar = document.querySelector(".navbar");
+        const navbarHeight = navbar ? navbar.offsetHeight : 100;
 
-        if (targetElement) {
-          // Calculate position accounting for navbar
+        // First, allow any animations or content to load by waiting a brief moment
+        setTimeout(() => {
+          // Get the updated position of the element after animations might have affected layout
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition =
             elementPosition + window.pageYOffset - navbarHeight - 20;
 
-          // Smooth scroll to target
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-
-          // If using GSAP, uncomment this and comment the window.scrollTo above
-          /*
+          // Use GSAP for more controlled scrolling
           gsap.to(window, {
             duration: 1,
             scrollTo: {
-              y: targetElement,
-              offsetY: navbarHeight + 20
+              y: offsetPosition,
+              autoKill: false, // Prevents interference from other scroll events
             },
-            ease: "power3.inOut"
+            ease: "power3.inOut",
+            onUpdate: function () {
+              // Force AOS to recalculate
+              if (typeof AOS !== "undefined") {
+                AOS.refresh();
+              }
+            },
+            onComplete: function () {
+              // After scrolling is complete, make final adjustment if needed
+              setTimeout(() => {
+                const finalPosition = targetElement.getBoundingClientRect().top;
+                if (Math.abs(finalPosition - navbarHeight - 20) > 5) {
+                  // If position is still off by more than 5px, do a final adjustment
+                  window.scrollBy({
+                    top: finalPosition - navbarHeight - 20,
+                    behavior: "smooth",
+                  });
+                }
+              }, 100);
+            },
           });
-          */
-        }
-      });
+        }, 50); // Short delay to let the page update first
+      }
     });
   });
+
+  // Remove duplicate event listener to prevent conflicts
+  document.removeEventListener("DOMContentLoaded", arguments.callee);
 
   // Fade in animation for elements as they appear in viewport
   const fadeElements = document.querySelectorAll(".fade-in");
