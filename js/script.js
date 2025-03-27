@@ -181,6 +181,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Function to initialize progress circles
+  function initializeProgressCircles() {
+    // This function is now handled by go-to-top.js
+    console.log("Progress circles initialized");
+  }
+
   // Initialize all features
   initializeProgressCircles();
   initializeParallax();
@@ -198,20 +204,20 @@ document.addEventListener("DOMContentLoaded", function () {
       grid-gap: 30px;
       padding: 1rem;
     }
-    
+
     .skill-circle-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
-    
+
     .circle-container {
       width: 120px;
       height: 120px;
       position: relative;
     }
-    
+
     .skills-title {
       font-family: var(--font-heading);
       text-align: center;
@@ -219,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
       position: relative;
       display: inline-block;
     }
-    
+
     .skills-title::after {
       content: '';
       position: absolute;
@@ -229,24 +235,24 @@ document.addEventListener("DOMContentLoaded", function () {
       bottom: -10px;
       left: 0;
     }
-    
+
     .skill-name {
       color: white;
       margin-top: 15px;
       font-weight: 500;
       letter-spacing: 0.5px;
     }
-    
+
     .text-scramble-char {
       display: inline-block;
       color: var(--accent-color);
     }
-    
+
     @media only screen and (max-width: 768px) {
       .progress-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .circle-container {
         width: 100px;
         height: 100px;

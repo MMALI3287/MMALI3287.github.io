@@ -2216,3 +2216,163 @@ section,
 .nav-link:focus .nav-link-text {
   color: var(--secondary-color);
 }
+
+/* Go to Top Button Styles - Professional Redesign */
+.go-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: rgba(15, 23, 42, 0.85); /* Dark background matching site theme */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 50%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+  transform: translateY(20px) scale(0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.go-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.go-to-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 3px; /* Control the thickness */
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.5),
+    rgba(16, 185, 129, 0.5)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.go-to-top:hover::before {
+  opacity: 1;
+}
+
+.go-to-top i {
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.go-to-top:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 0 2px rgba(59, 130, 246, 0.2);
+  transform: translateY(-5px) scale(1.05);
+}
+
+.go-to-top:hover i {
+  transform: translateY(-3px);
+  color: #3b82f6;
+}
+
+.go-to-top:active,
+.go-to-top.clicked {
+  transform: translateY(-2px) scale(0.95);
+  transition: all 0.2s ease;
+}
+
+/* Pulse animation for when reaching the end of the page */
+@keyframes pulse-end {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+.go-to-top.pulse {
+  animation: pulse-end 1.5s infinite;
+}
+
+/* Progress Ring Styles - Professional Redesign */
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 3px rgba(59, 130, 246, 0.3));
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.3s ease, stroke 0.4s ease;
+  stroke: rgba(59, 130, 246, 0.8); /* Blue color matching site theme */
+  stroke-width: 3px;
+  fill: transparent;
+  stroke-linecap: round; /* Rounded ends for the progress circle */
+}
+
+/* Percentage text inside the button */
+.scroll-percentage {
+  position: absolute;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.7);
+  padding: 2px 8px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.go-to-top:hover .scroll-percentage {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* Pulse animation for the button when it first appears */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+.go-to-top.visible {
+  animation: pulse-ring 2s ease-out;
+}
